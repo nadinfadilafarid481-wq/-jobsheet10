@@ -20,22 +20,20 @@ public class BioskopWithScanner26 {
                 case 1:
                     while (true) {
                         System.out.print("Masukkan nama: ");
-                        nama = sc.nextLine();
-                        while (true) {
-                            System.out.print("Masukkan baris: ");
-                            baris = sc.nextInt();
-                            System.out.print("Masukkan kolom: ");
-                            kolom = sc.nextInt();
-                            sc.nextLine();
+                        nama = sc.nextLine();  
+                        System.out.print("Masukkan baris: ");
+                        baris = sc.nextInt();
+                        System.out.print("Masukkan kolom: ");
+                        kolom = sc.nextInt();
+                        sc.nextLine();
                            
-                            if (baris < 1 || baris > penonton.length|| kolom < 1 || kolom > penonton[0].length) {
-                                System.out.println("Kursi tidak tersedia! Baris 1-" + penonton.length + ", kolom 1-" + penonton[0].length + ". Silakan ulangi.");
-                            }else if (penonton[baris - 1][kolom - 1] != null) {
-                                System.out.println("Kursi sudah terisi oleh "+ penonton[baris - 1][kolom - 1] + "! Pilih kursi lain.");
-                            } else {
-                                break;
-                            }
-                        }
+                        if (baris < 1 || baris > penonton.length|| kolom < 1 || kolom > penonton[0].length) {
+                            System.out.println("Kursi tidak tersedia! Baris 1-" + penonton.length + ", kolom 1-" + penonton[0].length + ". Silakan ulangi.");
+                        }else if (penonton[baris - 1][kolom - 1] != null) {
+                            System.out.println("Kursi sudah terisi oleh "+ penonton[baris - 1][kolom - 1] + "! Pilih kursi lain.");
+                        } else {
+                            break;
+                        }                       
                         penonton[baris - 1][kolom - 1] = nama;
 
                         System.out.print("Input penonton lainnya? (y/n): ");
